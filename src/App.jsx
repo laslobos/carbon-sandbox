@@ -1,38 +1,97 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import {
   Content,
-  Grid,
-  Column,
   Header,
   HeaderName,
-  Theme,
-  Stack
+  HeaderMenuButton,
+  SideNav,
+  SideNavItems,
+  SideNavLink,
+  Theme
 } from '@carbon/react';
-import DataTableDemo from './components/DataTableDemo';
-import TreeViewBasic from './components/TreeViewBasic';
-import TreeViewDemo from './components/TreeViewDemo';
+import DataTablePage from './pages/DataTablePage';
+import TreeViewPage from './pages/TreeViewPage';
+import NumberInputPage from './pages/NumberInputPage';
+import TooltipPage from './pages/TooltipPage';
+
+function AppContent() {
+  const [isSideNavExpanded, setIsSideNavExpanded] = useState(true);
+  const location = useLocation();
+
+  return (
+    <Theme theme="white">
+      <Header aria-label="Carbon Component Sandbox">
+        <HeaderMenuButton
+          aria-label={isSideNavExpanded ? 'Close menu' : 'Open menu'}
+          onClick={() => setIsSideNavExpanded(!isSideNavExpanded)}
+          isActive={isSideNavExpanded}
+        />
+        <HeaderName as={Link} to="/" prefix="IBM">
+          Carbon Sandbox
+        </HeaderName>
+      </Header>
+
+      <SideNav
+        aria-label="Side navigation"
+        expanded={isSideNavExpanded}
+        isFixedNav
+      >
+        <SideNavItems>
+          <SideNavLink
+            as={Link}
+            to="/datatable"
+            isActive={location.pathname === '/datatable'}
+          >
+            DataTable
+          </SideNavLink>
+          <SideNavLink
+            as={Link}
+            to="/treeview"
+            isActive={location.pathname === '/treeview'}
+          >
+            TreeView
+          </SideNavLink>
+          <SideNavLink
+            as={Link}
+            to="/numberinput"
+            isActive={location.pathname === '/numberinput'}
+          >
+            NumberInput
+          </SideNavLink>
+          <SideNavLink
+            as={Link}
+            to="/tooltip"
+            isActive={location.pathname === '/tooltip'}
+          >
+            Tooltip
+          </SideNavLink>
+        </SideNavItems>
+      </SideNav>
+
+      <Content>
+        <Routes>
+          <Route path="/" element={
+            <div style={{ padding: '2rem' }}>
+              <h1>Welcome to Carbon Component Sandbox</h1>
+              <p>Select a component from the side navigation to view demos.</p>
+            </div>
+          } />
+          <Route path="/datatable" element={<DataTablePage />} />
+          <Route path="/treeview" element={<TreeViewPage />} />
+          <Route path="/numberinput" element={<NumberInputPage />} />
+          <Route path="/tooltip" element={<TooltipPage />} />
+        </Routes>
+      </Content>
+    </Theme>
+  );
+}
 
 function App() {
   return (
-    <Theme theme="white">
-      <Header aria-label="Carbon React Website">
-        <HeaderName href="#" prefix="IBM">
-          Carbon Component Demo
-        </HeaderName>
-      </Header>
-      
-      <Content>
-        <Grid>
-          <Column lg={16} md={8} sm={4}>
-            <Stack gap={7}>
-              <DataTableDemo />
-              <TreeViewBasic />
-              <TreeViewDemo />
-            </Stack>
-          </Column>
-        </Grid>
-      </Content>
-    </Theme>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
