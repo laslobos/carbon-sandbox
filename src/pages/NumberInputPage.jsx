@@ -9,23 +9,37 @@ function NumberInputPage() {
   return (
     <Stack gap={7}>
       <Stack gap={5}>
-        <h1>NumberInput Accessibility</h1>
-        <p>Demonstrating the screen reader accessibility issue with NumberInput buttons and solutions.</p>
+        <h1>NumberInput Accessibility Issues</h1>
+        <p>
+          Investigating VoiceOver on iOS accessibility problems with Carbon's NumberInput component 
+          and exploring potential solutions.
+        </p>
       </Stack>
       
       <Stack gap={5}>
-        <h2>Problem: Default NumberInput (Multiple Side-by-Side)</h2>
+        <h2>Problem: Default NumberInput</h2>
         <Stack gap={4}>
           <p>
-            <strong>Issue:</strong> When multiple NumberInputs are adjacent, VoiceOver on iOS announces
-            unlabeled "Button" elements for increment/decrement controls. Screen reader users cannot
-            determine which buttons belong to which input.
+            <strong>VoiceOver Issues:</strong>
           </p>
-          <p>
-            <strong>Note:</strong> The buttons have <code>tabindex="-1"</code> (correct for keyboard users),
-            but this does NOT hide them from screen readers. VoiceOver swipe navigation will encounter
-            these buttons.
-          </p>
+          <UnorderedList>
+            <ListItem>
+              <strong>Unlabeled buttons:</strong> When multiple NumberInputs are adjacent, VoiceOver 
+              announces generic "Button" elements without context about which input they control
+            </ListItem>
+            <ListItem>
+              <strong>Not adjustable:</strong> The input is not announced as "adjustable", so VoiceOver 
+              users cannot use swipe up/down gestures to change values
+            </ListItem>
+            <ListItem>
+              <strong>Buttons have tabindex="-1":</strong> Correct for keyboard users but prevents 
+              VoiceOver from properly activating the buttons via double-tap
+            </ListItem>
+          </UnorderedList>
+          {/* 
+          Test: Use VoiceOver to navigate these inputs. Notice the buttons announce 
+          as "Button" with no context, and double-tapping them doesn't change the value.
+          */}
         </Stack>
         <Grid narrow>
           <Column sm={4} md={4} lg={4}>
@@ -38,24 +52,22 @@ function NumberInputPage() {
       </Stack>
       
       <Stack gap={5}>
-        <h2>Solution 1: Hide Buttons from Screen Readers (Recommended)</h2>
-        <Stack gap={4}>
-          <p>
-            <strong>Approach:</strong> Add <code>aria-hidden="true"</code> to increment/decrement buttons.
-          </p>
-          <p>
-            <strong>Rationale:</strong> The buttons are redundant for screen reader users who can:
-          </p>
-          <UnorderedList>
-            <ListItem>Use arrow keys (↑↓) on desktop to adjust values</ListItem>
-            <ListItem>Use VoiceOver's native adjustment gestures (swipe up/down) on iOS</ListItem>
-            <ListItem>Directly type values into the input</ListItem>
-          </UnorderedList>
-          <p>
-            <strong>Result:</strong> VoiceOver only announces the input field, not the buttons.
-            Clean, uncluttered experience.
-          </p>
-        </Stack>
+        <h2>Attempted Solution 1: Hide Buttons with aria-hidden</h2>
+        {/* 
+        Approach: Add aria-hidden="true" to increment/decrement buttons.
+        
+        Issues with this approach:
+        - Removes only way to increment/decrement: Since the input is not "adjustable", 
+          hiding the buttons removes the only method VoiceOver users have to change values without typing
+        - Forces keyboard input: Users must double-tap to activate the input field 
+          and use the on-screen keyboard to type values
+        - Not truly accessible: This solution assumes VoiceOver provides native 
+          adjustment gestures, but Carbon's NumberInput doesn't implement the required ARIA attributes 
+          to make this work
+        
+        Test: With VoiceOver, notice the buttons are hidden but there's no alternative 
+        way to increment/decrement values.
+        */}
         <Grid narrow>
           <Column sm={4} md={4} lg={4}>
             <NumberInputAccessible />
@@ -67,21 +79,22 @@ function NumberInputPage() {
       </Stack>
       
       <Stack gap={5}>
-        <h2>Solution 2: Add Descriptive Labels to Buttons</h2>
-        <Stack gap={4}>
-          <p>
-            <strong>Approach:</strong> Add <code>aria-label</code> attributes that identify which
-            input each button controls (e.g., "Increment Width", "Decrement Height").
-          </p>
-          <p>
-            <strong>Rationale:</strong> If buttons must remain accessible, they need clear labels
-            so screen reader users understand their purpose and association.
-          </p>
-          <p>
-            <strong>Result:</strong> VoiceOver announces "Increment Width, button" instead of just
-            "Button", providing context.
-          </p>
-        </Stack>
+        <h2>Attempted Solution 2: Add Descriptive Labels to Buttons</h2>
+        {/*
+        Approach: Add aria-label attributes that identify which input each button controls 
+        (e.g., "Increment Width", "Decrement Height").
+        
+        Issues with this approach:
+        - Confusing announcements: VoiceOver announces "increment width number, increment number" - 
+          the custom aria-label conflicts with existing ARIA attributes
+        - Buttons still don't work: Double-tapping the button doesn't change the value because 
+          tabindex="-1" prevents proper VoiceOver interaction
+        - Doesn't solve the core problem: Even with better labels, the buttons remain 
+          non-functional for VoiceOver users
+        
+        Test: With VoiceOver, notice the improved but confusing announcement, 
+        and that double-tapping the button doesn't actually change the value.
+        */}
         <Grid narrow>
           <Column sm={4} md={4} lg={4}>
             <NumberInputLabeled
@@ -100,25 +113,27 @@ function NumberInputPage() {
         </Grid>
       </Stack>
 
-      {/* <Stack gap={5}>
-        <h2>Recommendation</h2>
-        <Stack gap={4}>
-          <p>
-            <strong>Solution 1 (aria-hidden) is preferred</strong> because:
-          </p>
-          <UnorderedList>
-            <ListItem>Matches native HTML number input behavior</ListItem>
-            <ListItem>Reduces cognitive load for screen reader users</ListItem>
-            <ListItem>Eliminates redundant controls</ListItem>
-            <ListItem>Follows Carbon's design principle: buttons are for mouse users only</ListItem>
-          </UnorderedList>
-          <p>
-            The <code>tabindex="-1"</code> attribute correctly removes buttons from keyboard
-            tab order, but <code>aria-hidden="true"</code> is needed to hide them from
-            screen readers as well.
-          </p>
-        </Stack>
-      </Stack> */}
+      {/*
+      Root Cause Analysis:
+      
+      The fundamental issue: Carbon's NumberInput has a design conflict between 
+      keyboard and screen reader accessibility.
+      
+      - For keyboard users: tabindex="-1" on buttons is correct - they use arrow keys to adjust values
+      - For screen reader users: The buttons are the only way to increment/decrement, 
+        but tabindex="-1" makes them non-functional with VoiceOver
+      - Missing ARIA: The input lacks proper ARIA attributes (like role="spinbutton", 
+        aria-valuemin, aria-valuemax, aria-valuenow) to make it truly "adjustable" for screen readers
+      
+      Conclusion: Neither attempted solution fully addresses the accessibility issues. 
+      A proper fix would require changes to Carbon's NumberInput component itself to either:
+      
+      1. Make the input truly "adjustable" with proper ARIA attributes and hide the buttons
+      2. Remove tabindex="-1" from buttons so they work with VoiceOver (but this would add them 
+         to keyboard tab order)
+      3. Implement a dual-mode approach where buttons behave differently for keyboard vs. 
+         screen reader users
+      */}
     </Stack>
   );
 }
