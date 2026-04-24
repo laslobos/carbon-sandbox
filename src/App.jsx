@@ -14,6 +14,7 @@ import DataTablePage from './pages/DataTablePage';
 import TreeViewPage from './pages/TreeViewPage';
 import NumberInputPage from './pages/NumberInputPage';
 import TooltipPage from './pages/TooltipPage';
+import MultiSelectPage from './pages/MultiSelectPage';
 
 function AppContent() {
   const [isSideNavExpanded, setIsSideNavExpanded] = useState(true);
@@ -66,6 +67,13 @@ function AppContent() {
           >
             Tooltip
           </SideNavLink>
+          <SideNavLink
+            as={Link}
+            to="/multiselect"
+            isActive={location.pathname === '/multiselect'}
+          >
+            MultiSelect
+          </SideNavLink>
         </SideNavItems>
       </SideNav>
 
@@ -81,6 +89,7 @@ function AppContent() {
           <Route path="/treeview" element={<TreeViewPage />} />
           <Route path="/numberinput" element={<NumberInputPage />} />
           <Route path="/tooltip" element={<TooltipPage />} />
+          <Route path="/multiselect" element={<MultiSelectPage />} />
         </Routes>
       </Content>
     </Theme>
