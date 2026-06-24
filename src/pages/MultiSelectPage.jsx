@@ -1,7 +1,9 @@
 import React from 'react';
 import { Stack, UnorderedList, ListItem } from '@carbon/react';
+import NativeMultiSelectDropdown from '../components/NativeMultiSelectDropdown';
 import MultiSelectDemo from '../components/MultiSelectDemo';
 import MultiSelectAccessible from '../components/MultiSelectAccessible';
+import MultiSelectAccessibleHover from '../components/MultiSelectAccessibleHover';
 import MultiSelectNoButton from '../components/MultiSelectNoButton';
 
 function MultiSelectPage() {
@@ -16,7 +18,26 @@ function MultiSelectPage() {
       </Stack>
 
       <Stack gap={5}>
-        <h2>Default MultiSelect</h2>
+        <h2>Standard Accessible MultiSelect Dropdown</h2>
+        <Stack gap={4}>
+          <p>
+            This is a custom-built accessible multiselect dropdown using standard HTML, CSS, and JavaScript.
+            It demonstrates proper WCAG-compliant keyboard navigation behavior.
+          </p>
+          <p>
+            <strong>Keyboard behavior:</strong> Tab to focus, Enter/Space/Down Arrow to open,
+            Up/Down arrows to navigate, Space/Enter to select, Escape to close, Tab to close and move to next element.
+          </p>
+          <p>
+            <strong>Key difference:</strong> When you press Tab while the dropdown is open,
+            it closes the dropdown AND moves focus to the next element in one action (not two).
+          </p>
+        </Stack>
+        <NativeMultiSelectDropdown />
+      </Stack>
+
+      <Stack gap={5}>
+        <h2>Carbon Default MultiSelect</h2>
         <Stack gap={4}>
           <p>
             This MultiSelect has two items pre-selected (Option 1 and Option 2).
@@ -97,6 +118,26 @@ function MultiSelectPage() {
           </p>
         </Stack>
         <MultiSelectAccessible />
+      </Stack>
+
+      <Stack gap={5}>
+        <h2>Enhancement: Clear Button Hover State</h2>
+        <Stack gap={4}>
+          <p>
+            Extends the "Correct Solution" above by adding a dedicated hover state to the clear button.
+          </p>
+          <p>
+            <strong>Why it matters:</strong> Without its own hover state, the button shares the parent
+            dropdown's background-change hover, giving no visual signal that it is a separate, independently
+            interactive target. Adding a scoped hover makes the affordance clear.
+          </p>
+          <p>
+            <strong>Behaviour:</strong> Hovering the clear button applies a rounded background using the
+            Carbon <code>layer-hover</code> token, matching how Carbon styles icon buttons elsewhere
+            (e.g. Tag close). The parent dropdown hover remains unchanged.
+          </p>
+        </Stack>
+        <MultiSelectAccessibleHover />
       </Stack>
     </Stack>
   );

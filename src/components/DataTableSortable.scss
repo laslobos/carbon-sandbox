@@ -1,0 +1,63 @@
+// WCAG 1.4.13 Compliance: Make sort icons always visible
+// This ensures users can discover sorting functionality without hover/focus
+// and prevents content appearing/disappearing which can be disorienting
+
+.sortable-table-wrapper {
+  // Override Carbon's default behavior of hiding sort icons
+  .cds--table-sort {
+    // Make sort icon always visible, not just on hover/focus
+    .cds--table-sort__icon {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    
+    // Ensure proper contrast for inactive sort state
+    .cds--table-sort__icon-unsorted {
+      opacity: 0.5;
+    }
+    
+    // Active/sorted state should be fully visible
+    &.cds--table-sort--active .cds--table-sort__icon,
+    &.cds--table-sort--ascending .cds--table-sort__icon,
+    &.cds--table-sort--descending .cds--table-sort__icon {
+      opacity: 1;
+    }
+    
+    // Enhanced focus state for keyboard users
+    &:focus {
+      outline: 2px solid #0f62fe;
+      outline-offset: -2px;
+      
+      .cds--table-sort__icon {
+        opacity: 1;
+      }
+    }
+    
+    // Hover state enhancement (but icon already visible)
+    &:hover {
+      .cds--table-sort__icon {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Additional accessibility improvements
+.sortable-table-wrapper {
+  // Ensure sufficient color contrast for all states
+  .cds--table-header-label {
+    color: #161616; // Ensures 4.5:1 contrast ratio
+  }
+  
+  // Make it clear that headers are interactive
+  .cds--table-sort {
+    cursor: pointer;
+    
+    // Add visual indicator that this is clickable
+    &:hover {
+      background-color: #e5e5e5;
+    }
+  }
+}
+
+// Made with Bob
