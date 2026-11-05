@@ -29,3 +29,5 @@ yarn-error.log*
 
 # Testing
 coverage/
+# Local Bob configuration, probe scripts and screenshots
+.bob/

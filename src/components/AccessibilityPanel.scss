@@ -1,0 +1,256 @@
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/type';
+
+.a11y-panel {
+  margin-block-start: $spacing-07;
+  border: 1px solid $border-subtle-01;
+  background: $layer-01;
+  color: $text-primary;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-03 $spacing-05;
+    inline-size: 100%;
+    padding: $spacing-05;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: start;
+    cursor: pointer;
+    font-family: inherit;
+    @include type.type-style('body-compact-01');
+
+    &:hover {
+      background: $layer-hover-01;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $focus;
+      outline-offset: -2px;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    @include type.type-style('heading-compact-01');
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-02 $spacing-05;
+    color: $text-secondary;
+    @include type.type-style('helper-text-01');
+  }
+
+  &__stale {
+    color: $text-error;
+    font-weight: 600;
+  }
+
+  &__body {
+    padding: $spacing-05;
+    border-block-start: 1px solid $border-subtle-01;
+  }
+
+  &__icon {
+    &--pass { color: $support-success; }
+    &--review { color: $support-warning; }
+    &--fail { color: $support-error; }
+  }
+
+  &__intro {
+    margin-block-end: $spacing-05;
+    color: $text-secondary;
+    @include type.type-style('body-compact-01');
+  }
+
+  // ── summary cards ────────────────────────────────────────────────────────
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: $spacing-05;
+    margin-block-end: $spacing-06;
+  }
+
+  &__card {
+    padding: $spacing-05;
+    border: 1px solid $border-subtle-01;
+    border-inline-start-width: 4px;
+    background: $layer-02;
+
+    &--fail { border-inline-start-color: $support-error; }
+    &--review { border-inline-start-color: $support-warning; }
+    &--pass { border-inline-start-color: $support-success; }
+  }
+
+  &__card-title {
+    margin: 0;
+    @include type.type-style('heading-compact-01');
+  }
+
+  &__card-sub {
+    margin-block-end: $spacing-03;
+    color: $text-secondary;
+    @include type.type-style('helper-text-01');
+  }
+
+  &__stat-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__stat {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    @include type.type-style('body-compact-01');
+  }
+
+  // ── rows ─────────────────────────────────────────────────────────────────
+  &__section-title {
+    margin-block: $spacing-06 $spacing-03;
+    @include type.type-style('heading-compact-02');
+  }
+
+  &__section-note {
+    margin-block-end: $spacing-03;
+    color: $text-secondary;
+    @include type.type-style('helper-text-01');
+  }
+
+  &__row {
+    padding-block: $spacing-04;
+    border-block-end: 1px solid $border-subtle-01;
+    @include type.type-style('body-compact-01');
+  }
+
+  &__row-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $spacing-03;
+    margin-block-end: $spacing-02;
+  }
+
+  &__muted {
+    color: $text-secondary;
+    @include type.type-style('helper-text-01');
+  }
+
+  &__code {
+    padding-inline: $spacing-02;
+    background: $layer-accent-01;
+    font-family: var(--cds-code-01-font-family, monospace);
+    font-size: 0.75rem;
+  }
+
+  &__snippet {
+    display: block;
+    margin-block-start: $spacing-02;
+    padding: $spacing-02 $spacing-03;
+    background: $layer-02;
+    font-family: var(--cds-code-01-font-family, monospace);
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+
+  // ── manual checklist ─────────────────────────────────────────────────────
+  &__progress {
+    margin-block-end: $spacing-05;
+  }
+
+  &__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-04;
+    margin-block-end: $spacing-05;
+  }
+
+  &__item {
+    padding: $spacing-05;
+    margin-block-end: $spacing-04;
+    border: 1px solid $border-subtle-01;
+    background: $layer-02;
+
+    &--resolved {
+      border-inline-start: 4px solid $support-success;
+    }
+  }
+
+  &__item-title {
+    margin: 0 0 $spacing-02;
+    @include type.type-style('heading-compact-01');
+  }
+
+  &__item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-02 $spacing-04;
+    margin-block-end: $spacing-03;
+    color: $text-secondary;
+    @include type.type-style('helper-text-01');
+  }
+
+  &__details {
+    margin: 0 0 $spacing-04;
+
+    dt {
+      margin-block-start: $spacing-03;
+      @include type.type-style('label-01');
+      color: $text-secondary;
+    }
+
+    dd {
+      margin: 0;
+      @include type.type-style('body-compact-01');
+    }
+  }
+
+  &__saved {
+    min-block-size: 1rem;
+    color: $text-secondary;
+    @include type.type-style('helper-text-01');
+  }
+
+  &__empty {
+    padding: $spacing-05;
+    color: $text-secondary;
+  }
+}
+
+.a11y-panel__heading {
+  margin: 0;
+  font: inherit;
+}
+
+.a11y-panel__progress-label {
+  display: block;
+  margin-block-end: $spacing-02;
+  @include type.type-style('label-01');
+  color: $text-secondary;
+}
+
+.a11y-panel__progress-bar {
+  inline-size: 100%;
+  block-size: $spacing-03;
+  appearance: none;
+  border: 0;
+  background: $layer-accent-01;
+  accent-color: $support-success;
+
+  &::-webkit-progress-bar { background: $layer-accent-01; }
+  &::-webkit-progress-value { background: $support-success; }
+  &::-moz-progress-bar { background: $support-success; }
+}
+
+.a11y-panel__item--stale {
+  border-inline-start: 4px solid $support-warning;
+}

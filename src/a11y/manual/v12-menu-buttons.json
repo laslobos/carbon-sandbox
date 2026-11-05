@@ -1,0 +1,88 @@
+{
+  "items": {
+    "std.keyboard-operable": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:05:29.969Z"
+    },
+    "std.keyboard-no-trap": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "Yes, can exit with Esc",
+      "updatedAt": "2026-11-04T16:06:29.510Z"
+    },
+    "std.keyboard-shortcuts": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:06:44.941Z"
+    },
+    "v12-menu-buttons.open-keys": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:06:49.308Z"
+    },
+    "v12-menu-buttons.arrow-keys": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:06:54.017Z"
+    },
+    "v12-menu-buttons.home-end": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "Not required here",
+      "updatedAt": "2026-11-04T16:07:26.965Z"
+    },
+    "v12-menu-buttons.escape-returns": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:07:26.980Z"
+    },
+    "v12-menu-buttons.activate-returns": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:07:51.337Z"
+    },
+    "v12-menu-buttons.tab-while-open": {
+      "resolved": false,
+      "accepted": false,
+      "comment": "Check whether we want focus to go to next interactive element",
+      "updatedAt": "2026-11-04T16:09:56.226Z"
+    },
+    "std.focus-order": {
+      "resolved": false,
+      "accepted": false,
+      "comment": "Enter when open returns focus to button. Hitting space when open moves focus to next element",
+      "updatedAt": "2026-11-04T16:12:40.380Z"
+    },
+    "std.focus-visible": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:13:18.336Z"
+    },
+    "std.focus-not-obscured": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:14:13.515Z"
+    },
+    "std.no-context-change": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:14:34.643Z"
+    },
+    "std.text-contrast": {
+      "resolved": true,
+      "accepted": false,
+      "comment": "",
+      "updatedAt": "2026-11-04T16:15:03.539Z"
+    }
+  }
+}

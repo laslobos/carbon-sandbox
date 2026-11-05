@@ -1,0 +1,541 @@
+{
+  "route": "/v12/date-picker",
+  "scanDate": "2026-11-03T17:49:43.153Z",
+  "scope": "[data-a11y-scope=\"v12\"]",
+  "states": [
+    "closed",
+    "open"
+  ],
+  "axe": {
+    "version": "4.14.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa",
+      "wcag22aa",
+      "best-practice"
+    ],
+    "scanDate": "2026-11-03T17:49:43.153Z",
+    "passed": [
+      {
+        "id": "aria-allowed-attr",
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=axeAPI",
+        "nodeCount": 46
+      },
+      {
+        "id": "aria-allowed-role",
+        "description": "Ensure role attribute has an appropriate value for the element",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-role?application=axeAPI",
+        "nodeCount": 46
+      },
+      {
+        "id": "aria-command-name",
+        "description": "Ensure every ARIA button, link and menuitem has an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-command-name?application=axeAPI",
+        "nodeCount": 42
+      },
+      {
+        "id": "aria-conditional-attr",
+        "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-conditional-attr?application=axeAPI",
+        "nodeCount": 46
+      },
+      {
+        "id": "aria-deprecated-role",
+        "description": "Ensure elements do not use deprecated roles",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-deprecated-role?application=axeAPI",
+        "nodeCount": 45
+      },
+      {
+        "id": "aria-hidden-focus",
+        "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-hidden-focus?application=axeAPI",
+        "nodeCount": 1
+      },
+      {
+        "id": "aria-prohibited-attr",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=axeAPI",
+        "nodeCount": 46
+      },
+      {
+        "id": "aria-required-attr",
+        "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-attr?application=axeAPI",
+        "nodeCount": 45
+      },
+      {
+        "id": "aria-roles",
+        "description": "Ensure all elements with a role attribute use a valid value",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-roles?application=axeAPI",
+        "nodeCount": 45
+      },
+      {
+        "id": "aria-valid-attr",
+        "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr?application=axeAPI",
+        "nodeCount": 46
+      },
+      {
+        "id": "aria-valid-attr-value",
+        "description": "Ensure all ARIA attributes have valid values",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-valid-attr-value?application=axeAPI",
+        "nodeCount": 46
+      },
+      {
+        "id": "avoid-inline-spacing",
+        "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/avoid-inline-spacing?application=axeAPI",
+        "nodeCount": 1
+      },
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+        "nodeCount": 52
+      },
+      {
+        "id": "duplicate-id-aria",
+        "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/duplicate-id-aria?application=axeAPI",
+        "nodeCount": 2
+      },
+      {
+        "id": "form-field-multiple-labels",
+        "description": "Ensure form field does not have multiple label elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/form-field-multiple-labels?application=axeAPI",
+        "nodeCount": 3
+      },
+      {
+        "id": "label",
+        "description": "Ensure every form element has a label",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label?application=axeAPI",
+        "nodeCount": 3
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=axeAPI",
+        "nodeCount": 42
+      },
+      {
+        "id": "label-title-only",
+        "description": "Ensure that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-title-only?application=axeAPI",
+        "nodeCount": 3
+      },
+      {
+        "id": "nested-interactive",
+        "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=axeAPI",
+        "nodeCount": 44
+      },
+      {
+        "id": "svg-img-alt",
+        "description": "Ensure <svg> elements with an img, image, graphics-document or graphics-symbol role have accessible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/svg-img-alt?application=axeAPI",
+        "nodeCount": 2
+      },
+      {
+        "id": "tabindex",
+        "description": "Ensure tabindex attribute values are not greater than 0",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/tabindex?application=axeAPI",
+        "nodeCount": 45
+      },
+      {
+        "id": "target-size",
+        "description": "Ensure touch targets have sufficient size and space",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/target-size?application=axeAPI",
+        "nodeCount": 44
+      }
+    ],
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+        "nodeCount": 3,
+        "nodes": [
+          {
+            "html": "<input id=\"date-picker-v12\" pattern=\"\\d{1,2}\\/\\d{1,2}\\/\\d{4}\" placeholder=\"mm/dd/yyyy\" type=\"text\" class=\"cds--date-picker__input cds--date-picker__input--md flatpickr-input\">",
+            "target": "#date-picker-v12",
+            "failureSummary": "Fix any of the following:\n  Element has no value; test color contrast with a value entered"
+          },
+          {
+            "html": "<label for=\"date-picker-v12\" class=\"cds--label\" dir=\"auto\">Date picker label</label>",
+            "target": "label",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "html": "<input id=\"date-picker-v12\" pattern=\"\\d{1,2}\\/\\d{1,2}\\/\\d{4}\" placeholder=\"mm/dd/yyyy\" type=\"text\" class=\"cds--date-picker__input cds--date-picker__input--md flatpickr-input active\">",
+            "target": "#date-picker-v12",
+            "failureSummary": "Fix any of the following:\n  Element has no value; test color contrast with a value entered"
+          }
+        ]
+      },
+      {
+        "id": "target-size",
+        "impact": "serious",
+        "description": "Ensure touch targets have sufficient size and space",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/target-size?application=axeAPI",
+        "nodeCount": 1,
+        "nodes": [
+          {
+            "html": "<input id=\"date-picker-v12\" pattern=\"\\d{1,2}\\/\\d{1,2}\\/\\d{4}\" placeholder=\"mm/dd/yyyy\" type=\"text\" class=\"cds--date-picker__input cds--date-picker__input--md flatpickr-input active\">",
+            "target": "#date-picker-v12",
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size because it is partially obscured by a neighbor with negative tabindex (smallest space is 288px by 7px, should be at least 24px by 24px). Is the neighbor a target?\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 6.4px instead of at least 24px. Is the neighbor a target?"
+          }
+        ]
+      }
+    ]
+  },
+  "ibm": {
+    "version": "4.0.34",
+    "ruleArchive": "Latest Deployment (latest)",
+    "scanDate": "2026-11-03T17:49:43.153Z",
+    "issues": [
+      {
+        "ruleId": "aria_content_in_landmark",
+        "type": "Violation",
+        "level": 3,
+        "checkpoint": "1.3.1 Info and Relationships",
+        "issue": "Content is not within a landmark element",
+        "element": "<input aria-label=\"Year\" tabindex=\"-1\" type=\"number\" class=\"numInput cur-year\">",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_content_in_landmark.html",
+        "count": 2
+      },
+      {
+        "ruleId": "style_focus_visible",
+        "type": "Needs review",
+        "level": 1,
+        "checkpoint": "2.4.7 Focus Visible",
+        "issue": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+        "element": "<input class=\"cds--date-picker__input cds--date-picker__input--md flatpickr-input\" type=\"text\" placeholder=\"mm/dd/yyyy\" pattern=\"\\d{1,2}\\/\\d{1,2}\\/\\d{4}\" id=\"date-picker-v12\">",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_focus_visible.html"
+      },
+      {
+        "ruleId": "application_content_accessible",
+        "type": "Needs review",
+        "level": 1,
+        "checkpoint": "1.1.1 Non-text Content; 2.1.1 Keyboard",
+        "issue": "Verify that the non-decorative static text and image content within an element with \"application\" role are accessible",
+        "element": "<div style=\"top: 297.344px; left: 320px; right: auto;\" aria-label=\"calendar-container\" role=\"application\" tabindex=\"-1\" class=\"flatpickr-calendar animate cds--date-picker__calendar open arrowBottom arrowLeft\">",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/application_content_accessible.html"
+      },
+      {
+        "ruleId": "input_label_visible",
+        "type": "Needs review",
+        "level": 1,
+        "checkpoint": "2.5.3 Label in Name; 3.3.2 Labels or Instructions",
+        "issue": "The input element does not have an associated visible label",
+        "element": "<input aria-label=\"Year\" tabindex=\"-1\" type=\"number\" class=\"numInput cur-year\">",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_visible.html"
+      },
+      {
+        "ruleId": "widget_tabbable_exists",
+        "type": "Needs review",
+        "level": 1,
+        "checkpoint": "2.1.1 Keyboard",
+        "issue": "Component with \"spinbutton\" role does not have a tabbable element",
+        "element": "<input aria-label=\"Year\" tabindex=\"-1\" type=\"number\" class=\"numInput cur-year\">",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/widget_tabbable_exists.html"
+      },
+      {
+        "ruleId": "widget_tabbable_exists",
+        "type": "Needs review",
+        "level": 1,
+        "checkpoint": "2.1.1 Keyboard",
+        "issue": "Component with \"button\" role does not have a tabbable element",
+        "element": "<span role=\"button\" tabindex=\"-1\" aria-label=\"Sunday, November 1, 2026\" class=\"flatpickr-day cds--date-picker__day\">",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/widget_tabbable_exists.html",
+        "count": 42
+      }
+    ],
+    "passed": [
+      {
+        "id": "aria_application_label_unique",
+        "description": "Each element with \"application\" role must have a unique label that describes its purpose",
+        "checkpoint": "2.4.1 Bypass Blocks",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_application_label_unique.html",
+        "count": 1
+      },
+      {
+        "id": "aria_application_labelled",
+        "description": "Each element with \"application\" role must have a label that describes its purpose",
+        "checkpoint": "2.4.1 Bypass Blocks",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_application_labelled.html",
+        "count": 1
+      },
+      {
+        "id": "aria_attribute_allowed",
+        "description": "ARIA attributes must be valid for the element's role",
+        "checkpoint": "4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_attribute_allowed.html",
+        "count": 47
+      },
+      {
+        "id": "aria_attribute_required",
+        "description": "The required attributes for the element with a role must be defined",
+        "checkpoint": "4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_attribute_required.html",
+        "count": 46
+      },
+      {
+        "id": "aria_attribute_valid",
+        "description": "ARIA attributes should be valid for the element and ARIA role to which they are assigned",
+        "checkpoint": "ARIA specification",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_attribute_valid.html",
+        "count": 47
+      },
+      {
+        "id": "aria_attribute_value_valid",
+        "description": "ARIA property values must be valid",
+        "checkpoint": "4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_attribute_value_valid.html",
+        "count": 47
+      },
+      {
+        "id": "aria_content_in_landmark",
+        "description": "All content must reside within an element with a landmark role",
+        "checkpoint": "1.3.1 Info and Relationships",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_content_in_landmark.html",
+        "count": 12
+      },
+      {
+        "id": "aria_descendant_valid",
+        "description": "Browsers ignore the explicit and implicit ARIA roles of the descendants of certain elements",
+        "checkpoint": "4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_descendant_valid.html",
+        "count": 44
+      },
+      {
+        "id": "aria_hidden_nontabbable",
+        "description": "A hidden element should not contain any tabbable elements",
+        "checkpoint": "1.3.1 Info and Relationships; 4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_hidden_nontabbable.html",
+        "count": 2
+      },
+      {
+        "id": "aria_keyboard_handler_exists",
+        "description": "Interactive WAI_ARIA UI components must provide keyboard access",
+        "checkpoint": "2.1.1 Keyboard",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_keyboard_handler_exists.html",
+        "count": 45
+      },
+      {
+        "id": "aria_role_allowed",
+        "description": "Elements must have a valid 'role' per ARIA specification",
+        "checkpoint": "4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_role_allowed.html",
+        "count": 45
+      },
+      {
+        "id": "aria_role_redundant",
+        "description": "An explicitly-assigned ARIA role should not be redundant with the implicit role of the element",
+        "checkpoint": "ARIA specification",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_role_redundant.html",
+        "count": 46
+      },
+      {
+        "id": "aria_role_valid",
+        "description": "ARIA roles must be valid for the element to which they are assigned",
+        "checkpoint": "4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_role_valid.html",
+        "count": 46
+      },
+      {
+        "id": "blink_css_review",
+        "description": "Do not use the \"blink\" value of the 'text-decoration' property for longer than five seconds",
+        "checkpoint": "2.2.2 Pause, Stop, Hide",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/blink_css_review.html",
+        "count": 1
+      },
+      {
+        "id": "dir_attribute_valid",
+        "description": "'dir' attribute value must be \"ltr\", \"rtl\", or \"auto\"",
+        "checkpoint": "1.3.2 Meaningful Sequence",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/dir_attribute_valid.html",
+        "count": 1
+      },
+      {
+        "id": "element_id_unique",
+        "description": "Element 'id' attribute values must be unique within a document",
+        "checkpoint": "HTML specification",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html",
+        "count": 1
+      },
+      {
+        "id": "element_tabbable_unobscured",
+        "description": "When an element receives focus, it is not entirely covered by other content",
+        "checkpoint": "2.4.11 Focus Not Obscured (Minimum)",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_tabbable_unobscured.html",
+        "count": 1
+      },
+      {
+        "id": "element_tabbable_visible",
+        "description": "A tabbable element should be visible on the screen when it has keyboard focus",
+        "checkpoint": "2.4.7 Focus Visible",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_tabbable_visible.html",
+        "count": 1
+      },
+      {
+        "id": "form_label_unique",
+        "description": "Form controls should have exactly one label",
+        "checkpoint": "1.3.1 Info and Relationships",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/form_label_unique.html",
+        "count": 1
+      },
+      {
+        "id": "img_alt_background",
+        "description": "Background images that convey important information must have a text alternative that describes the image",
+        "checkpoint": "1.1.1 Non-text Content",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/img_alt_background.html",
+        "count": 78
+      },
+      {
+        "id": "img_alt_misuse",
+        "description": "'alt' attribute value must be a good inline replacement for the image",
+        "checkpoint": "1.1.1 Non-text Content",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/img_alt_misuse.html",
+        "count": 2
+      },
+      {
+        "id": "input_fields_grouped",
+        "description": "Groups of logically related input elements should be contained within a <fieldset> element",
+        "checkpoint": "1.3.1 Info and Relationships",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_fields_grouped.html",
+        "count": 2
+      },
+      {
+        "id": "input_label_before",
+        "description": "Text inputs and <select> elements must have a label before the input control",
+        "checkpoint": "3.3.2 Labels or Instructions",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_before.html",
+        "count": 1
+      },
+      {
+        "id": "input_label_exists",
+        "description": "Each form control must have an associated label",
+        "checkpoint": "4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_exists.html",
+        "count": 44
+      },
+      {
+        "id": "input_label_visible",
+        "description": "An input element must have an associated visible label",
+        "checkpoint": "2.5.3 Label in Name; 3.3.2 Labels or Instructions",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_visible.html",
+        "count": 1
+      },
+      {
+        "id": "label_content_exists",
+        "description": "A <label> element must have non-empty descriptive text that identifies the purpose of the interactive component",
+        "checkpoint": "4.1.2 Name, Role, Value",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/label_content_exists.html",
+        "count": 1
+      },
+      {
+        "id": "label_name_visible",
+        "description": "Accessible name must match or contain the visible label text",
+        "checkpoint": "2.5.3 Label in Name",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/label_name_visible.html",
+        "count": 43
+      },
+      {
+        "id": "label_ref_valid",
+        "description": "The 'for' attribute for a label should reference a non-empty, unique 'id' attribute of a valid element",
+        "checkpoint": "1.3.1 Info and Relationships",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/label_ref_valid.html",
+        "count": 1
+      },
+      {
+        "id": "style_background_decorative",
+        "description": "Images included by using CSS alone must not convey important information",
+        "checkpoint": "1.1.1 Non-text Content",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_background_decorative.html",
+        "count": 1
+      },
+      {
+        "id": "style_color_misuse",
+        "description": "Combine color and descriptive markup to convey information",
+        "checkpoint": "1.4.1 Use of Color",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_color_misuse.html",
+        "count": 1
+      },
+      {
+        "id": "style_highcontrast_visible",
+        "description": "Windows high contrast mode must be supported when using CSS to include, position or alter non-decorative content",
+        "checkpoint": "1.1.1 Non-text Content; 1.3.2 Meaningful Sequence; 1.4.11 Non-text Contrast",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_highcontrast_visible.html",
+        "count": 1
+      },
+      {
+        "id": "style_viewport_resizable",
+        "description": "Text must scale up to 200% without loss of content or functionality",
+        "checkpoint": "1.4.4 Resize text; 1.4.10 Reflow",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/style_viewport_resizable.html",
+        "count": 1
+      },
+      {
+        "id": "svg_graphics_labelled",
+        "description": "A non-decorative SVG element must have an accessible name",
+        "checkpoint": "1.1.1 Non-text Content",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html",
+        "count": 2
+      },
+      {
+        "id": "target_spacing_sufficient",
+        "description": "The target must be sufficiently sized or spaced from other targets",
+        "checkpoint": "2.5.8 Minimum Target Size",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/target_spacing_sufficient.html",
+        "count": 2
+      },
+      {
+        "id": "text_contrast_sufficient",
+        "description": "The contrast ratio of text with its background must meet WCAG AA requirements",
+        "checkpoint": "1.4.3 Contrast (Minimum)",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_contrast_sufficient.html",
+        "count": 50
+      },
+      {
+        "id": "text_quoted_correctly",
+        "description": "Quotations should be marked with <q> or <blockquote> elements",
+        "checkpoint": "1.3.1 Info and Relationships",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_quoted_correctly.html",
+        "count": 80
+      },
+      {
+        "id": "text_spacing_valid",
+        "description": "CSS !important should not be used in inline style to control letter or word spacing or line height",
+        "checkpoint": "1.4.12 Text Spacing",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_spacing_valid.html",
+        "count": 51
+      },
+      {
+        "id": "text_whitespace_valid",
+        "description": "Space characters should not be used to control spacing within a word",
+        "checkpoint": "1.3.2 Meaningful Sequence",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_whitespace_valid.html",
+        "count": 80
+      },
+      {
+        "id": "widget_tabbable_exists",
+        "description": "Component must have at least one tabbable element",
+        "checkpoint": "2.1.1 Keyboard",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/widget_tabbable_exists.html",
+        "count": 1
+      },
+      {
+        "id": "widget_tabbable_single",
+        "description": "Components with a widget role must have no more than one tabbable element",
+        "checkpoint": "2.1.1 Keyboard; 2.4.3 Focus Order",
+        "helpUrl": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/widget_tabbable_single.html",
+        "count": 44
+      }
+    ]
+  }
+}

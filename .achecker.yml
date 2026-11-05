@@ -1,0 +1,16 @@
+ruleArchive: latest
+policies:
+  - IBM_Accessibility
+failLevels:
+  - violation
+# "pass" is needed so the scan can list the rules that passed.
+reportLevels:
+  - pass
+  - violation
+  - potentialviolation
+  - manual
+  - recommendation
+  - potentialrecommendation
+# Results are written to src/a11y/ by scripts/a11y-scan.mjs; no report files needed.
+outputFormat:
+  - disable

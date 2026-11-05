@@ -1,4 +1,58 @@
+// Activate v12 feature flags before importing Carbon styles.
+// enable-v12-release: rounded corners, updated borders, revised spacing —
+//   matches the v12 Storybook build.
+// enable-v12-dynamic-floating-styles: floating-ui positioning for MenuButton,
+//   Tooltip, etc.
+@use '@carbon/styles/scss/feature-flags' with (
+  $feature-flags: (
+    'enable-v12-release': true,
+    'enable-v12-dynamic-floating-styles': true,
+  )
+);
+
 // Import Carbon styles - required for all Carbon components
 @use '@carbon/react';
+
+// Polyfill the --cds-button-radius CSS custom property system introduced in
+// Carbon v12 (not yet in @carbon/styles@1.116.0). Scoped to .cds--v12 so
+// only explicitly opted-in components get pill-shaped corners — v11 reference
+// components on the same page are unaffected.
+.cds--v12 {
+  .cds--btn {
+    --cds-button-radius: 999999px;
+    border-start-start-radius: var(--cds-button-radius-ss, var(--cds-button-radius, 999999px));
+    border-start-end-radius: var(--cds-button-radius-se, var(--cds-button-radius, 999999px));
+    border-end-end-radius: var(--cds-button-radius-ee, var(--cds-button-radius, 999999px));
+    border-end-start-radius: var(--cds-button-radius-es, var(--cds-button-radius, 999999px));
+  }
+
+  // ComboButton split: left pill / right pill, matching v12 upstream.
+  .cds--combo-button__primary-action {
+    --cds-button-radius-ss: 999999px;
+    --cds-button-radius-se: 0px;
+    --cds-button-radius-es: 999999px;
+    --cds-button-radius-ee: 0px;
+  }
+  .cds--combo-button__trigger {
+    --cds-button-radius-ss: 0px;
+    --cds-button-radius-se: 999999px;
+    --cds-button-radius-es: 0px;
+    --cds-button-radius-ee: 999999px;
+  }
+}
+
+// TEST: isolate what blocks menu border-radius — REVERT AFTER CONFIRMING
+.cds--menu--border {
+  outline: none !important;
+  border: 1px solid var(--cds-border-subtle) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+
+.sidenav-done-icon {
+  fill: var(--cds-support-success);
+  margin-inline-start: 0.5rem;
+  vertical-align: text-bottom;
+}
 
 // Made with Bob
