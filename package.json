@@ -23,7 +23,6 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "accessibility-checker": "^4.0.34",
-    "accessibility-preprocessor": "https://mcp.acs.dal.app.cirrus.ibm.com/MCP/resources/accessibility-preprocessor",
     "axe-core": "^4.14.0",
     "puppeteer-core": "^25.16.0",
     "sass": "^1.83.0",

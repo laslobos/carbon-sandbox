@@ -14,13 +14,21 @@ export default defineConfig(async ({ command, mode }) => {
       // Saves manual accessibility checklist comments / resolved state (dev only)
       const { a11yManualStore } = await import('./scripts/a11y-manual-plugin.mjs');
       manualStorePlugin = a11yManualStore(__dirname);
+      // Optional, local-only: IBM's accessibility-preprocessor adds source-location
+      // attributes used by the Bob accessibility MCP scan. It is not in package.json
+      // (it is hosted on a private IBM network), so install it locally with:
+      //   npm install --no-save https://mcp.acs.dal.app.cirrus.ibm.com/MCP/resources/accessibility-preprocessor
+      // Without it the dev server, `npm run a11y:scan` and the status panel work unchanged.
       try {
-          // Dynamic import only in dev mode - keeps it as devDependency
           const { transformVitePlugin } = await import('accessibility-preprocessor');
           transformPlugin = await transformVitePlugin(__dirname);
           console.log('✓ Accessibility preprocessor loaded successfully');
       } catch (error) {
-          console.error("Failed to load accessibility-preprocessor:", error);
+          if (error?.code === 'ERR_MODULE_NOT_FOUND') {
+              console.log('[Vite Config] accessibility-preprocessor not installed (optional) - skipping');
+          } else {
+              console.error("Failed to load accessibility-preprocessor:", error);
+          }
       }
     }
     return {
